@@ -50,16 +50,15 @@ async function run() {
             res.send(services)
         });
 
-        //post API-add new service
+
         app.post('/addServices', async (req, res) => {
             const newService = req.body;
             const result = await serviceCollection.insertOne(newService)
             res.json(result);
-
         });
 
 
-        //post API- add order
+
         app.post('/order', async (req, res) => {
             const newOrder = req.body;
             const result = await orderCollection.insertOne(newOrder);
@@ -67,7 +66,7 @@ async function run() {
 
         });
 
-        // get API - single data of order load 
+
         app.get('/orders/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
