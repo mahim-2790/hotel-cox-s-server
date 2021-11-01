@@ -52,9 +52,11 @@ async function run() {
 
 
         app.post('/addServices', async (req, res) => {
+            console.log('hitted');
             const newService = req.body;
-            const result = await servicesCollection.insertOne(newService)
+            const result = await servicesCOllection.insertOne(newService);
             res.json(result);
+
         });
 
 
